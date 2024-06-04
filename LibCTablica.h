@@ -4,8 +4,8 @@
 class CTablica
 {
 private:
-	static int compareCounter;
-	static int swapCounter;
+	int compareCounter;
+	int swapCounter;
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
@@ -32,15 +32,15 @@ private:
 public:
 	/* @brief Funkcja ResetCounters() zeruje liczniki porównañ i zamian
 	 */
-	void static ResetCounters();
+	void ResetCounters();
 	/* @brief Funkcja ReturnCompareCounter() zwraca wartoœæ licznika porównañ
 	 * @return Liczba porównañ
 	 */
-	int static ReturnCompareCounter();
+	int ReturnCompareCounter();
 	/* @brief Funkcja ReturnSwapCounter() zwraca wartoœæ licznika zamian
 	 * @return Liczba zamian
 	 */
-	int static ReturnSwapCounter();
+	int ReturnSwapCounter();
 	/* @brief Konstruktor klasy CTablica
 	 */
 	CTablica();

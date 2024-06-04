@@ -128,8 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Labki.cpp" />
+    <ClCompile Include="LibCSortTablica.cpp" />
     <ClCompile Include="LibCTablica.cpp" />
     <ClCompile Include="LibCTablica.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LibCSortTablica.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
