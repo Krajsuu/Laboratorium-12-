@@ -10,6 +10,11 @@ private:
 	int* tab = nullptr;
 	int n;
 public :
+	int f_SetSize();
+
+
+	int f_ReturnSize();
+
 	/* @brief Konstruktor klasy CSortTablica
 	 * @param m - rozmiar tablicy
 	 */

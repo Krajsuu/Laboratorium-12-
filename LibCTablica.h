@@ -1,46 +1,50 @@
 #ifndef LIBCTABLICA_H
 #define LIBCTABLICA_H
 
-class CTablica
+#include "LibCSortTablica.h"
+
+class CTablica : public CSortTablica
 {
 private:
 	int compareCounter;
 	int swapCounter;
+	
+	int f_podzielLomuto(CSortTablica& tab, int lewy, int prawy);
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
 	 * @param i - indeks wêz³a
 	 */
-	void Heapify(int* tab, int n, int i);
+	void f_Heapify(CSortTablica &tab, int i);
 	/* @brief Funkcja Swap() zamienia miejscami wartoœci wskazywane przez wskaŸniki a i b
 	 * @param a - wskaŸnik na pierwsz¹ wartoœæ
 	 * @param b - wskaŸnik na drug¹ wartoœæ
 	 */
-	void Swap(int* a, int* b);
+	void f_Swap(int* a, int* b);
 	/* @brief Funkcja BuildHeap() buduje kopiec
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
 	 */
-	void BuildHeap(int* tab, int n);
+	void f_BuildHeap(CSortTablica &tab);
 	/* @brief Funkcja Partition() dokonuje podzia³u tablicy na dwie czêœci
 	 * @param tab - tablica
 	 * @param left - indeks lewego krañca
 	 * @param right - indeks prawego krañca
 	 * @return Indeks elementu, który jest na swoim miejscu
 	*/
-	int Partition(int* tab, int left, int right);
+	int f_PartitionHoare(CSortTablica &tab, int left, int right);
 public:
 	/* @brief Funkcja ResetCounters() zeruje liczniki porównañ i zamian
 	 */
-	void ResetCounters();
+	void f_ResetCounters();
 	/* @brief Funkcja ReturnCompareCounter() zwraca wartoœæ licznika porównañ
 	 * @return Liczba porównañ
 	 */
-	int ReturnCompareCounter();
+	int f_ReturnCompareCounter();
 	/* @brief Funkcja ReturnSwapCounter() zwraca wartoœæ licznika zamian
 	 * @return Liczba zamian
 	 */
-	int ReturnSwapCounter();
+	int f_ReturnSwapCounter();
 	/* @brief Konstruktor klasy CTablica
 	 */
 	CTablica();
@@ -48,13 +52,19 @@ public:
 	 * @param tab - tablica
 	 * @param n - rozmiar tablicy
 	 */
-	void HeapSort(int* tab, int n);
+
+	void f_ShaherSort(CSortTablica &tab);
+
+	void f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy);
+
+	void f_HeapSort(CSortTablica &tab);
 	/* @brief Funkcja QuickSortHoare sortuje tablicê algorytmem sortowania szybkiego
 	 * @param tab - tablica
 	 * @param left - indeks lewego krañca
 	 * @param right - indeks prawego krañca
 	*/
-	void QuickSortHoare(int* tab, int left, int right);
+	void f_QuickSortHoare(CSortTablica &tab, int left, int right);
+
 };
 
 #endif // !LIBCTABLICA_H

@@ -1,6 +1,66 @@
 #include "LibCTablica.h"
 
-void CTablica::Heapify(int* tab, int n, int i)
+void cTablica::f_ShakerSort(CSortTablica &tab)
+{
+	bool zamiana = true;
+	int n = tab.f_ReturnSize;
+	int lewy = 0;
+	int prawy = n - 1;
+
+	while (zamiana)
+	{
+		zamiana = false;
+
+		for (int i = lewy; i < prawy; ++i)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				f_Swap[i], tab[i + 1]);
+				zamiana = true;
+			}
+		}
+		prawy--;
+
+		for (int i = prawy; i > lewy; --i)
+		{
+			if (tab[i] < tab[i - 1])
+			{
+				f_Swap(tab[i], tab[i - 1]);
+				zamiana = true;
+			}
+		}
+		lewy++;
+	}
+}
+
+void cTablica::f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy)
+{
+	if (lewy < prawy)
+	{
+		int podzial = f_PartitionLomuto(lewy, prawy);
+		f_QuickSortLomuto(lewy, podzial - 1);
+		f_QuickSortLomuto(podzial + 1, prawy);
+	}
+
+}
+
+int cTablica::f_PartitionLomuto(CSortTablica& tab,int lewy, int prawy)
+{
+	int pivot = tablica[prawy];
+	int i = lewy - 1;
+	for (int j = lewy; j < prawy; ++j)
+	{
+		if (tablica[j] <= pivot)
+		{
+			i++;
+			f_zamien(tablica[i], tablica[j]);
+		}
+	}
+	f_zamien(tablica[i + 1], tablica[prawy]);
+	return i + 1;
+}
+
+void CTablica::f_Heapify(CSortTablica &tab , int i)
 {
 	int najwiekszy = i;
 	int l = 2 * i + 1;
@@ -20,7 +80,7 @@ void CTablica::Heapify(int* tab, int n, int i)
 	}
 }
 
-void CTablica::Swap(int* a, int* b)
+void CTablica::f_Swap(int* a, int* b)
 {
 	swapCounter++;
 	int temp = *a;
@@ -28,7 +88,7 @@ void CTablica::Swap(int* a, int* b)
 	*b = temp;
 }
 
-void CTablica::BuildHeap(int* tab, int n)
+void CTablica::f_BuildHeap(CSortTablica &tab )
 {
 	for (int i = (n / 2) - 1; i >= 0; i--)
 	{
@@ -36,7 +96,7 @@ void CTablica::BuildHeap(int* tab, int n)
 	}
 }
 
-int CTablica::Partition(int* tab, int left, int right)
+int CTablica::f_PartitionHoare(CSortTablica &tab, int left, int right)
 {
 	int i = left - 1;
 	int j = right + 1;
@@ -64,18 +124,18 @@ int CTablica::Partition(int* tab, int left, int right)
 	}
 }
 
-void CTablica::ResetCounters()
+void CTablica::f_ResetCounters()
 {
 	compareCounter = 0;
 	swapCounter = 0;
 }
 
-int CTablica::ReturnCompareCounter()
+int CTablica::f_ReturnCompareCounter()
 {
 	return compareCounter;
 }
 
-int CTablica::ReturnSwapCounter()
+int CTablica::f_ReturnSwapCounter()
 {
 	return swapCounter;
 }
@@ -85,7 +145,7 @@ CTablica::CTablica()
 	ResetCounters();
 }
 
-void CTablica::HeapSort(int* tab, int n)
+void CTablica::f_HeapSort(CSortTablica &tab )
 {
 	BuildHeap(tab, n);
 	for (int i = n - 1; i > 0; i--)
@@ -95,7 +155,7 @@ void CTablica::HeapSort(int* tab, int n)
 	}
 }
 
-void CTablica::QuickSortHoare(int* tab, int left, int right)
+void CTablica::f_QuickSortHoare(CSortTablica &tab, int left, int right)
 {
 	if (left < right)
 	{
@@ -105,3 +165,4 @@ void CTablica::QuickSortHoare(int* tab, int left, int right)
 		QuickSortHoare(tab, p + 1, right);
 	}
 }
+
