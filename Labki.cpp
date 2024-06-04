@@ -2,11 +2,15 @@
 //
 
 #include <iostream>
+#include <locale>
 #include "LibCSortTablica.h"
 #include "LibCTablica.h"
+#include "Menu.h"
 
 int main()
 {
+    std::setlocale(LC_ALL, "Polish.UTF-8");
+
     CSortTablica T(5);
     T.FillAlone();
     T.Print();

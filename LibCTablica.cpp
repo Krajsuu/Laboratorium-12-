@@ -65,7 +65,7 @@ int CTablica::f_PartitionLomuto(int left, int right)
 void CTablica::f_HeapSort()
 {
 	f_BuildHeap();
-	for (int i = n - 1; i > 0; i--)
+	for (int i = n-1; i>=0; i--)
 	{
 		f_Swap(&tab[0], &tab[i]);
 		f_Heapify(i);
@@ -78,11 +78,11 @@ void CTablica::f_Heapify(int i)
 	int l = 2 * i + 1;
 	int r= 2 * i + 2;
 	compareCounter++;
-	if (l < n && tab[l] > tab[i]){
+	if (l < n && tab[l] > tab[najwiekszy]){
 		najwiekszy = l;
 	}
 	compareCounter++;
-	if(r < n && tab[r] > tab[i]){
+	if(r < n && tab[r] > tab[najwiekszy]){
 		najwiekszy = r;
 	}
 	if(najwiekszy != i){
