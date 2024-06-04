@@ -1,6 +1,6 @@
 #include "LibCTablica.h"
 
-void cTablica::f_ShakerSort(CSortTablica &tab)
+void CTablica::f_ShakerSort(CSortTablica &tab)
 {
 	bool zamiana = true;
 	int n = tab.f_ReturnSize;
@@ -33,7 +33,7 @@ void cTablica::f_ShakerSort(CSortTablica &tab)
 	}
 }
 
-void cTablica::f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy)
+void CTablica::f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy)
 {
 	if (lewy < prawy)
 	{
@@ -44,19 +44,19 @@ void cTablica::f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy)
 
 }
 
-int cTablica::f_PartitionLomuto(CSortTablica& tab,int lewy, int prawy)
+int CTablica::f_PartitionLomuto(CSortTablica& tab,int lewy, int prawy)
 {
-	int pivot = tablica[prawy];
+	int pivot = tab[prawy];
 	int i = lewy - 1;
 	for (int j = lewy; j < prawy; ++j)
 	{
-		if (tablica[j] <= pivot)
+		if (tab[j] <= pivot)
 		{
 			i++;
-			f_zamien(tablica[i], tablica[j]);
+			f_Swap(tab[i], tab[j]);
 		}
 	}
-	f_zamien(tablica[i + 1], tablica[prawy]);
+	f_Swap(tab[i + 1], tab[prawy]);
 	return i + 1;
 }
 

@@ -9,7 +9,8 @@ private:
 	int compareCounter;
 	int swapCounter;
 	
-	int f_podzielLomuto(CSortTablica& tab, int lewy, int prawy);
+	int f_PartitionLomuto(CSortTablica& tab, int lewy, int prawy);
+
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
@@ -53,7 +54,7 @@ public:
 	 * @param n - rozmiar tablicy
 	 */
 
-	void f_ShaherSort(CSortTablica &tab);
+	void f_ShakerSort(CSortTablica& tab);
 
 	void f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy);
 
