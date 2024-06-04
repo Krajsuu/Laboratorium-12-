@@ -7,13 +7,15 @@
 class CSortTablica
 {
 private:
-	int* tab = nullptr;
+	int tab;
 	int n;
 public :
 	int f_SetSize();
-
+	int* f_getTab();
 
 	int f_ReturnSize();
+
+	CSortTablica();
 
 	/* @brief Konstruktor klasy CSortTablica
 	 * @param m - rozmiar tablicy

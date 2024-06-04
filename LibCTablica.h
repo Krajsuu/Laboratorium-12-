@@ -9,14 +9,17 @@ private:
 	int compareCounter;
 	int swapCounter;
 	
-	int f_PartitionLomuto(CSortTablica& tab, int lewy, int prawy);
+	int* tab = nullptr;
+	int n = 0;
+	
+	int f_PartitionLomuto(int lewy, int prawy);
 
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
 	 * @param i - indeks wêz³a
 	 */
-	void f_Heapify(CSortTablica &tab, int i);
+	void f_Heapify(int i);
 	/* @brief Funkcja Swap() zamienia miejscami wartoœci wskazywane przez wskaŸniki a i b
 	 * @param a - wskaŸnik na pierwsz¹ wartoœæ
 	 * @param b - wskaŸnik na drug¹ wartoœæ
@@ -26,14 +29,14 @@ private:
 	 * @param tab - tablica
 	 * @param n - rozmiar kopca
 	 */
-	void f_BuildHeap(CSortTablica &tab);
+	void f_BuildHeap();
 	/* @brief Funkcja Partition() dokonuje podzia³u tablicy na dwie czêœci
 	 * @param tab - tablica
 	 * @param left - indeks lewego krañca
 	 * @param right - indeks prawego krañca
 	 * @return Indeks elementu, który jest na swoim miejscu
 	*/
-	int f_PartitionHoare(CSortTablica &tab, int left, int right);
+	int f_PartitionHoare(int left, int right);
 public:
 	/* @brief Funkcja ResetCounters() zeruje liczniki porównañ i zamian
 	 */
@@ -48,23 +51,23 @@ public:
 	int f_ReturnSwapCounter();
 	/* @brief Konstruktor klasy CTablica
 	 */
-	CTablica();
+	CTablica(CSortTablica &tab);
 	/* @brief Funkcja HeapSort() sortuje tablicê algorytmem sortowania przez kopcowanie
 	 * @param tab - tablica
 	 * @param n - rozmiar tablicy
 	 */
 
-	void f_ShakerSort(CSortTablica& tab);
+	void f_ShakerSort();
 
-	void f_QuickSortLomuto(CSortTablica& tab,int lewy, int prawy);
+	void f_QuickSortLomuto(int lewy, int prawy);
 
-	void f_HeapSort(CSortTablica &tab);
+	void f_HeapSort();
 	/* @brief Funkcja QuickSortHoare sortuje tablicê algorytmem sortowania szybkiego
 	 * @param tab - tablica
 	 * @param left - indeks lewego krañca
 	 * @param right - indeks prawego krañca
 	*/
-	void f_QuickSortHoare(CSortTablica &tab, int left, int right);
+	void f_QuickSortHoare(int left, int right);
 
 };
 
