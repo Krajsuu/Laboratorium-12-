@@ -3,60 +3,73 @@
 void CTablica::f_ShakerSort()
 {
 	bool zamiana = true;
-	int lewy = 0;
-	int prawy = n - 1;
+	int left = 0;
+	int right = n - 1;
 
 	while (zamiana)
 	{
 		zamiana = false;
 
-		for (int i = lewy; i < prawy; ++i)
+		for (int i = left; i < right; ++i)
 		{
+			compareCounter++;
 			if (tab[i] > tab[i + 1])
 			{
 				f_Swap(&tab[i], &tab[i + 1]);
 				zamiana = true;
 			}
 		}
-		prawy--;
+		right--;
 
-		for (int i = prawy; i > lewy; --i)
+		for (int i = right; i > left; --i)
 		{
+			compareCounter++;
 			if (tab[i] < tab[i - 1])
 			{
 				f_Swap(&tab[i], &tab[i - 1]);
 				zamiana = true;
 			}
 		}
-		lewy++;
+		left++;
 	}
 }
 
-void CTablica::f_QuickSortLomuto(int lewy, int prawy)
+void CTablica::f_QuickSortLomuto(int left, int right)
 {
-	if (lewy < prawy)
+	if (left < right)
 	{
-		int podzial = f_PartitionLomuto(lewy, prawy);
-		f_QuickSortLomuto(lewy, podzial - 1);
-		f_QuickSortLomuto(podzial + 1, prawy);
+		int podzial = f_PartitionLomuto(left, right);
+		f_QuickSortLomuto(left, podzial - 1);
+		f_QuickSortLomuto(podzial + 1, right);
 	}
 
 }
 
-int CTablica::f_PartitionLomuto(int lewy, int prawy)
+int CTablica::f_PartitionLomuto(int left, int right)
 {
-	int pivot = tab[prawy];
-	int i = lewy - 1;
-	for (int j = lewy; j < prawy; ++j)
+	int pivot = tab[right];
+	int i = left - 1;
+	for (int j = left; j < right; ++j)
 	{
+		compareCounter++;
 		if (tab[j] <= pivot)
 		{
 			i++;
 			f_Swap(&tab[i], &tab[j]);
 		}
 	}
-	f_Swap(&tab[i + 1], &tab[prawy]);
+	f_Swap(&tab[i + 1], &tab[right]);
 	return i + 1;
+}
+
+void CTablica::f_HeapSort()
+{
+	f_BuildHeap();
+	for (int i = n - 1; i > 0; i--)
+	{
+		f_Swap(&tab[0], &tab[i]);
+		f_Heapify(i);
+	}
 }
 
 void CTablica::f_Heapify(int i)
@@ -64,27 +77,18 @@ void CTablica::f_Heapify(int i)
 	int najwiekszy = i;
 	int l = 2 * i + 1;
 	int r= 2 * i + 2;
+	compareCounter++;
 	if (l < n && tab[l] > tab[i]){
-		compareCounter++;
 		najwiekszy = l;
 	}
+	compareCounter++;
 	if(r < n && tab[r] > tab[i]){
-		compareCounter++;
 		najwiekszy = r;
 	}
 	if(najwiekszy != i){
-		compareCounter++; //?
 		f_Swap(&tab[i], &tab[najwiekszy]);
 		f_Heapify(najwiekszy);
 	}
-}
-
-void CTablica::f_Swap(int* a, int* b)
-{
-	swapCounter++;
-	int temp = *a;
-	*a = *b;
-	*b = temp;
 }
 
 void CTablica::f_BuildHeap()
@@ -107,20 +111,42 @@ int CTablica::f_PartitionHoare(int left, int right)
 			i++;
 			compareCounter++;
 		} while (tab[i] < pivot);
-		compareCounter--;
 		do
 		{
 			j--;
 			compareCounter++;
 		} while (tab[j] > pivot);
-		compareCounter--;
 		if (i >= j)
 		{
-			compareCounter++;
 			return j;
 		}
 		f_Swap(&tab[i], &tab[j]);
 	}
+}
+
+void CTablica::f_QuickSortHoare(int left, int right)
+{
+	if (left < right)
+	{
+		int p = f_PartitionHoare(left, right);
+		f_QuickSortHoare(left, p);
+		f_QuickSortHoare(p + 1, right);
+	}
+}
+
+void CTablica::f_Swap(int* a, int* b)
+{
+	swapCounter++;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+CTablica::CTablica(CSortTablica& tab)
+{
+	this->n = tab.f_ReturnSize();
+	this->tab = tab.f_getTab();
+	f_ResetCounters();
 }
 
 void CTablica::f_ResetCounters()
@@ -139,31 +165,6 @@ int CTablica::f_ReturnSwapCounter()
 	return swapCounter;
 }
 
-CTablica::CTablica(CSortTablica &tab)
-{
-	this->n = tab.f_ReturnSize();
-	this->tab = tab.f_getTab();
-	f_ResetCounters();
-}
 
-void CTablica::f_HeapSort()
-{
-	f_BuildHeap();
-	for (int i = n - 1; i > 0; i--)
-	{
-		f_Swap(&tab[0], &tab[i]);
-		f_Heapify(i);
-	}
-}
 
-void CTablica::f_QuickSortHoare(int left, int right)
-{
-	if (left < right)
-	{
-		compareCounter++;
-		int p = f_PartitionHoare(left, right);
-		f_QuickSortHoare(left, p);
-		f_QuickSortHoare(p + 1, right);
-	}
-}
 

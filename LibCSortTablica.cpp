@@ -1,6 +1,6 @@
 #include "LibCSortTablica.h"
 
-int CSortTablica::f_SetSize()
+void CSortTablica::f_SetSize()
 {
 	std::cout << "Podaj liczbe elementow tablicy: ";
 	std::cin >> this -> n;;
@@ -24,8 +24,8 @@ CSortTablica::CSortTablica()
 
 CSortTablica::CSortTablica(int m)
 {
-	this->n = n;
-	tab = new int[n];
+	this->n = m;
+	tab = new int[m];
 }
 
 CSortTablica::~CSortTablica()

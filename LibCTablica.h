@@ -3,7 +3,7 @@
 
 #include "LibCSortTablica.h"
 
-class CTablica : public CSortTablica
+class CTablica
 {
 private:
 	int compareCounter;

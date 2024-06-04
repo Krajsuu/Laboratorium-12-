@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include "LibCSortTablica.h"
+#include "LibCTablica.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    CSortTablica T(5);
+    T.FillAlone();
+    T.Print();
+    CTablica D(T);
+    D.f_HeapSort();
+    T.Print();
+
+    std::cout << D.f_ReturnCompareCounter() << std::endl;
+    std::cout << D.f_ReturnSwapCounter();
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
