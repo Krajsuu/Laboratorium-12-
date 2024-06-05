@@ -9,8 +9,6 @@ class CSortTablica
 private:
 	int *tab;
 	int n;
-	int left = 0;
-	int right = n - 1;
 public :
 	void f_SetSize();
 	int* f_getTab();
