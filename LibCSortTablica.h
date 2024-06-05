@@ -7,10 +7,12 @@
 class CSortTablica
 {
 private:
-	int tab;
+	int *tab;
 	int n;
+	int left = 0;
+	int right = n - 1;
 public :
-	int f_SetSize();
+	void f_SetSize();
 	int* f_getTab();
 
 	int f_ReturnSize();

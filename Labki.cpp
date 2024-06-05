@@ -2,10 +2,36 @@
 //
 
 #include <iostream>
+#include <locale>
+#include "LibCSortTablica.h"
+#include "LibCTablica.h"
+#include "Menu.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int choice = -1;
+    while(choice != 0)
+	{
+		std::cout<<"Wybierz jedno z menu: "<<std::endl;
+		std::cout<<"[1] Tworzenie tablicy"<<std::endl;
+		std::cout<<"[2] Sortowanie tablicy"<<std::endl;
+		std::cout<<"[0] Wyjdz"<<std::endl;
+		std::cin>>choice;
+		switch (choice)
+		{
+			case 1:
+			f_displayMenuTable();
+			std::cin >> choice;
+			switch (choice)
+			{
+			case
+			}
+			break;
+			case 2:
+				f_displayMenuSort();
+
+		}
+	}
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania

@@ -1,0 +1,8 @@
+﻿  Labki.cpp
+  LibCSortTablica.cpp
+  LibCTablica.cpp
+  LibCTablica.h
+  Menu.cpp
+  Generowanie kodu...
+C:\Users\monik\Desktop\lab2\Menu.cpp(10,2): error C2882: "std": niedozwolone użycie identyfikatora przestrzeni nazw w wyrażeniu
+C:\Users\monik\Desktop\lab2\Menu.cpp(11,7): error C2143: błąd składniowy: brakuje „;” przed „std::cout”
