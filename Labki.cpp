@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include <locale>
 #include "LibCSortTablica.h"
 #include "LibCTablica.h"
 #include "Menu.h"

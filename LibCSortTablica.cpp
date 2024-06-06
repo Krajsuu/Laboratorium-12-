@@ -64,3 +64,14 @@ void CSortTablica::Print()
 	}
 	std::cout << std::endl;
 }
+
+void CSortTablica::operator=(CSortTablica t)
+{
+	this->n = t.n;
+	this -> tab = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		this -> tab[i] = t.tab[i];
+	}
+}
+

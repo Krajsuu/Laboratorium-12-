@@ -1,5 +1,12 @@
 #include "LibCTablica.h"
 
+CTablica::CTablica()
+{
+	tab = nullptr;
+	n = 0;
+	f_ResetCounters();
+}
+
 void CTablica::f_ShakerSort()
 {
 	bool zamiana = true;
@@ -123,6 +130,8 @@ int CTablica::f_PartitionHoare(int left, int right)
 		f_Swap(&tab[i], &tab[j]);
 	}
 }
+
+
 
 void CTablica::f_QuickSortHoare(int left, int right)
 {

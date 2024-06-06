@@ -36,6 +36,8 @@ public :
 	/* @brief Funkcja Print() wypisuje tablicê
 	 */
 	void Print();
+
+	void operator=(CSortTablica t);
 };
 
 #endif // !LIBCSORTTABLICA_H
