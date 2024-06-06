@@ -44,6 +44,7 @@ CSortTablica::CSortTablica(int m)
 
 void CSortTablica::FillRandom(int min, int max)
 {
+	this->tab = new int[n];
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dist(min, max);
@@ -53,9 +54,8 @@ void CSortTablica::FillRandom(int min, int max)
 	}
 }
 
-void CSortTablica::FillPartiallySorted(int x)
+void CSortTablica::FillPartiallySorted()
 {
-	this->n = x;
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dist(0, n*54);
