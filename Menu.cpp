@@ -63,7 +63,7 @@ void f_MenuTable(std::ostream& resultFile)
     {
         std::cout << "Wybrales opcje : Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)." << std::endl;
         type = "Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)";
-        S.FillPartiallySorted(10);
+        S.FillPartiallySorted();
         f_MenuSort(S,type,resultFile);
         break;
     }

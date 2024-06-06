@@ -27,7 +27,7 @@ public :
 	 * @param max - maksymalna wartoœæ
 	 */
 	void FillRandom(int min, int max);
-	void FillPartiallySorted(int x);
+	void FillPartiallySorted();
 	/* @brief Funkcja FillAlone() wype³nia tablicê wartoœciami wprowadzonymi przez u¿ytkownika
 	 */
 	void FillAlone();
