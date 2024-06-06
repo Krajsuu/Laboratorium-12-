@@ -56,6 +56,7 @@ void CSortTablica::FillRandom(int min, int max)
 
 void CSortTablica::FillPartiallySorted()
 {
+	this->tab = new int[n];
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dist(0, n*54);
@@ -78,6 +79,7 @@ void CSortTablica::FillPartiallySorted()
 
 void CSortTablica::FillAlone()
 {
+	this->tab = new int[n];
 	for (int i = 0; i < n; i++)
 	{
 		std::cin>>tab[i];

@@ -131,11 +131,13 @@
     <ClCompile Include="LibCSortTablica.cpp" />
     <ClCompile Include="LibCTablica.cpp" />
     <ClCompile Include="LibCTablica.h" />
+    <ClCompile Include="LibFile.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LibCSortTablica.h" />
     <ClInclude Include="LibExceptions.h" />
+    <ClInclude Include="LibFile.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

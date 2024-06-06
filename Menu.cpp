@@ -40,7 +40,7 @@ void f_MenuTable(std::ostream& resultFile)
         std::cin >> min;
         std::cin >> max;
         S.FillRandom(min, max);
-        f_MenuSort(S,type,resultFile);
+        f_MenuSort(S, type, resultFile);
         break;
     }
     case 2:
@@ -48,7 +48,7 @@ void f_MenuTable(std::ostream& resultFile)
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi rosnaco." << std::endl;
         type = "Tablica uzupelniona liczbami posortowanymi rosnaco";
         S.FillAlone();
-        f_MenuSort(S,type,resultFile);
+        f_MenuSort(S, type, resultFile);
         break;
     }
     case 3:
@@ -56,7 +56,7 @@ void f_MenuTable(std::ostream& resultFile)
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi malejaco." << std::endl;
         type = "Tablica uzupelniona liczbami posortowanymi malejaco";
         S.FillAlone();
-        f_MenuSort(S,type,resultFile);
+        f_MenuSort(S, type, resultFile);
         break;
     }
     case 4:
@@ -64,7 +64,7 @@ void f_MenuTable(std::ostream& resultFile)
         std::cout << "Wybrales opcje : Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)." << std::endl;
         type = "Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)";
         S.FillPartiallySorted();
-        f_MenuSort(S,type,resultFile);
+        f_MenuSort(S, type, resultFile);
         break;
     }
     case 0:
@@ -78,26 +78,30 @@ void f_MenuTable(std::ostream& resultFile)
     }
 };
 
-void f_MenuSort(CSortTablica S,std::string type, std::ostream& resultFile)
+void f_MenuSort(CSortTablica S, std::string type, std::ostream& resultFile)
 {
     CSortTablica S2;
     int choice = -1;
     system("cls");
     S2 = S;
-    do{
+    do {
         CTablica T(S);
         f_displayMenuSort();
         std::cin >> choice;
+        T.f_ResetCounters();
         switch (choice)
         {
         case 1:
         {
             system("cls");
             std::cout << "Wybrales opcje : Sortowanie Bubelkowe." << std::endl;
-            S.Print();
             T.f_ShakerSort();
-            S.Print();
-            resultFile << "Sortowanie Bubelkowe" <<"\t" << S.f_ReturnSize() << "\t" << type << "\t" << T.f_ReturnCompareCounter() << "\t" << T.f_ReturnSwapCounter();
+            resultFile << std::setw(30) << std::left << "Sortowanie B¹belkowe"
+                << std::setw(20) << std::left << S.f_ReturnSize()
+                << std::setw(75) << std::left << type
+                << std::setw(30) << std::left << T.f_ReturnCompareCounter()
+                << std::setw(30) << std::left << T.f_ReturnSwapCounter()
+                << std::endl;
             break;
         }
         case 2:
@@ -107,6 +111,12 @@ void f_MenuSort(CSortTablica S,std::string type, std::ostream& resultFile)
             S.Print();
             T.f_QuickSortLomuto(0, S.f_ReturnSize() - 1);
             S.Print();
+            resultFile << std::setw(30) << std::left << "Szybkie sortowanie Lomuto"
+                << std::setw(20) << std::left << S.f_ReturnSize()
+                << std::setw(75) << std::left << type
+                << std::setw(30) << std::left << T.f_ReturnCompareCounter()
+                << std::setw(30) << std::left << T.f_ReturnSwapCounter()
+                << std::endl;
             break;
         }
         case 3:
@@ -116,6 +126,12 @@ void f_MenuSort(CSortTablica S,std::string type, std::ostream& resultFile)
             S.Print();
             T.f_QuickSortHoare(0, S.f_ReturnSize() - 1);
             S.Print();
+            resultFile << std::setw(30) << std::left << "Szybkie sortowanie Hoare'a"
+                << std::setw(20) << std::left << S.f_ReturnSize()
+                << std::setw(75) << std::left << type
+                << std::setw(30) << std::left << T.f_ReturnCompareCounter()
+                << std::setw(30) << std::left << T.f_ReturnSwapCounter()
+                << std::endl;
             break;
         }
         case 4:
@@ -125,6 +141,12 @@ void f_MenuSort(CSortTablica S,std::string type, std::ostream& resultFile)
             S.Print();
             T.f_HeapSort();
             S.Print();
+            resultFile << std::setw(30) << std::left << "Sortowanie przez kopcowanie."
+                << std::setw(20) << std::left << S.f_ReturnSize()
+                << std::setw(75) << std::left << type
+                << std::setw(30) << std::left << T.f_ReturnCompareCounter()
+                << std::setw(30) << std::left << T.f_ReturnSwapCounter()
+                << std::endl;
             break;
         }
         case 5:

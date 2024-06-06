@@ -5,6 +5,7 @@
 #include "LibCTablica.h"
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 void f_displayMenuTable();
 
