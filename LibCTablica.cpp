@@ -1,5 +1,12 @@
 #include "LibCTablica.h"
 
+CTablica::CTablica()
+{
+	tab = nullptr;
+	n = 0;
+	f_ResetCounters();
+}
+
 void CTablica::f_ShakerSort()
 {
 	bool zamiana = true;
@@ -64,30 +71,36 @@ int CTablica::f_PartitionLomuto(int left, int right)
 
 void CTablica::f_HeapSort()
 {
-	f_BuildHeap();
-	for (int i = n-1; i>=0; i--)
+	int originalN = n;
+	f_BuildHeap();  // Zbuduj kopiec minimalny
+	for (int i = n - 1; i >= 0; i--)
 	{
-		f_Swap(&tab[0], &tab[i]);
-		f_Heapify(i);
+		f_Swap(&tab[0], &tab[i]);  // Przenieœ bie¿¹cy korzeñ (najmniejszy element) na koniec
+		n--;  // Zmniejsz rozmiar kopca
+		f_Heapify(0);  // Napraw kopiec po zmianie rozmiaru
 	}
+	n = originalN;  // Przywróæ oryginalny rozmiar n
 }
 
 void CTablica::f_Heapify(int i)
 {
-	int najwiekszy = i;
-	int l = 2 * i + 1;
-	int r= 2 * i + 2;
+	int najmniejszy = i;  // Inicjalizuj najmniejszy jako korzeñ
+	int l = 2 * i + 1;  // Lewe dziecko
+	int r = 2 * i + 2;  // Prawe dziecko
 	compareCounter++;
-	if (l < n && tab[l] > tab[najwiekszy]){
-		najwiekszy = l;
+	if (l < n && tab[l] > tab[najmniejszy])  // Porównaj lewe dziecko z korzeniem
+	{
+		najmniejszy = l;
 	}
 	compareCounter++;
-	if(r < n && tab[r] > tab[najwiekszy]){
-		najwiekszy = r;
+	if (r < n && tab[r] > tab[najmniejszy])  // Porównaj prawe dziecko z najmniejszym
+	{
+		najmniejszy = r;
 	}
-	if(najwiekszy != i){
-		f_Swap(&tab[i], &tab[najwiekszy]);
-		f_Heapify(najwiekszy);
+	if (najmniejszy != i)  // Jeœli najmniejszy nie jest korzeniem
+	{
+		f_Swap(&tab[i], &tab[najmniejszy]);  // Zamieñ korzeñ z najmniejszym
+		f_Heapify(najmniejszy);  // Rekurencyjnie napraw poddrzewo
 	}
 }
 
@@ -95,9 +108,10 @@ void CTablica::f_BuildHeap()
 {
 	for (int i = (n / 2) - 1; i >= 0; i--)
 	{
-		f_Heapify(i);
+		f_Heapify(i);  // Napraw kopiec od ostatniego nie-liœciowego wêz³a do korzenia
 	}
 }
+
 
 int CTablica::f_PartitionHoare(int left, int right)
 {
@@ -123,6 +137,8 @@ int CTablica::f_PartitionHoare(int left, int right)
 		f_Swap(&tab[i], &tab[j]);
 	}
 }
+
+
 
 void CTablica::f_QuickSortHoare(int left, int right)
 {

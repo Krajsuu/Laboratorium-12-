@@ -1,0 +1,4 @@
+﻿  LibCSortTablica.cpp
+C:\Users\monik\source\repos\Lab12\LibCSortTablica.cpp(62,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\source\repos\Lab12\LibCSortTablica.cpp(63,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+  Lab12.vcxproj -> C:\Users\monik\source\repos\Lab12\x64\Debug\Lab12.exe

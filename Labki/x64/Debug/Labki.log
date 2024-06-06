@@ -1,8 +1,7 @@
-﻿  Labki.cpp
-  LibCSortTablica.cpp
-  LibCTablica.cpp
-  LibCTablica.h
-  Menu.cpp
-  Generowanie kodu...
-C:\Users\monik\Desktop\lab2\Menu.cpp(10,2): error C2882: "std": niedozwolone użycie identyfikatora przestrzeni nazw w wyrażeniu
-C:\Users\monik\Desktop\lab2\Menu.cpp(11,7): error C2143: błąd składniowy: brakuje „;” przed „std::cout”
+﻿Labki\x64\Debug\LibCTablica.obj : warning LNK4042: obiekt określono więcej niż raz; dodatkowe wystąpienia zostały zignorowane
+Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: __cdecl CTablica::CTablica(class CSortTablica &)" (??0CTablica@@QEAA@AEAVCSortTablica@@@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
+Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_ShakerSort(void)" (?f_ShakerSort@CTablica@@QEAAXXZ) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
+Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_QuickSortLomuto(int,int)" (?f_QuickSortLomuto@CTablica@@QEAAXHH@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
+Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_HeapSort(void)" (?f_HeapSort@CTablica@@QEAAXXZ) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
+Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_QuickSortHoare(int,int)" (?f_QuickSortHoare@CTablica@@QEAAXHH@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
+C:\Users\monik\Desktop\lab2\x64\Debug\Labki.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 5

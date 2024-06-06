@@ -11,8 +11,9 @@ private:
 	
 	int* tab = nullptr;
 	int n = 0;
+
 	
-	int f_PartitionLomuto(int lewy, int prawy);
+	int f_PartitionLomuto(int left, int right);
 
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
 	 * @param tab - tablica
@@ -38,6 +39,7 @@ private:
 	*/
 	int f_PartitionHoare(int left, int right);
 public:
+	CTablica();
 	/* @brief Funkcja ResetCounters() zeruje liczniki porównañ i zamian
 	 */
 	void f_ResetCounters();
@@ -59,7 +61,7 @@ public:
 
 	void f_ShakerSort();
 
-	void f_QuickSortLomuto(int lewy, int prawy);
+	void f_QuickSortLomuto(int left, int right);
 
 	void f_HeapSort();
 	/* @brief Funkcja QuickSortHoare sortuje tablicê algorytmem sortowania szybkiego
