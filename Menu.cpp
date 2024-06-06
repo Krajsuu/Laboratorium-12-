@@ -22,10 +22,12 @@ void f_displayMenuSort()
     std::cout << "[0] Wyjdz z programu" << std::endl;
 }
 
-void f_MenuTable()
+void f_MenuTable(std::ostream& resultFile)
 {
-    CSortTablica S(10);
+    CSortTablica S;
+    S.f_SetSize();
     int min, max;
+    std::string type;
     int choice = -1;
     f_displayMenuTable();
     std::cin >> choice;
@@ -34,32 +36,35 @@ void f_MenuTable()
     case 1:
     {
         std::cout << "Wybrales opcje : Tablica uzupelniona losowymi liczbami." << std::endl;
+        type = "Tablica uzupelniona losowymi liczbami";
         std::cin >> min;
         std::cin >> max;
         S.FillRandom(min, max);
-        S.Print();
-        f_MenuSort(S);
+        f_MenuSort(S,type,resultFile);
         break;
     }
     case 2:
     {
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi rosnaco." << std::endl;
+        type = "Tablica uzupelniona liczbami posortowanymi rosnaco";
         S.FillAlone();
-        f_MenuSort(S);
+        f_MenuSort(S,type,resultFile);
         break;
     }
     case 3:
     {
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi malejaco." << std::endl;
+        type = "Tablica uzupelniona liczbami posortowanymi malejaco";
         S.FillAlone();
-        f_MenuSort(S);
+        f_MenuSort(S,type,resultFile);
         break;
     }
     case 4:
     {
         std::cout << "Wybrales opcje : Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)." << std::endl;
+        type = "Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)";
         S.FillPartiallySorted(10);
-        f_MenuSort(S);
+        f_MenuSort(S,type,resultFile);
         break;
     }
     case 0:
@@ -73,7 +78,7 @@ void f_MenuTable()
     }
 };
 
-void f_MenuSort(CSortTablica S)
+void f_MenuSort(CSortTablica S,std::string type, std::ostream& resultFile)
 {
     CSortTablica S2;
     int choice = -1;
@@ -92,6 +97,7 @@ void f_MenuSort(CSortTablica S)
             S.Print();
             T.f_ShakerSort();
             S.Print();
+            resultFile << "Sortowanie Bubelkowe" <<"\t" << S.f_ReturnSize() << "\t" << type << "\t" << T.f_ReturnCompareCounter() << "\t" << T.f_ReturnSwapCounter();
             break;
         }
         case 2:
@@ -125,7 +131,7 @@ void f_MenuSort(CSortTablica S)
         {
             system("cls");
             std::cout << "Wybrales opcje :  Wroc do menu." << std::endl;
-            f_MenuTable();
+            f_MenuTable(resultFile);
             break;
         }
         case 0:

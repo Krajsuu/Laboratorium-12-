@@ -2,19 +2,26 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "LibCSortTablica.h"
 #include "LibCTablica.h"
 #include "Menu.h"
+#include "LibFile.h"
+#include "LibExceptions.h"
 
 int main()
 {
-    int choice = -1;
-    while(choice != 0)
-	{
-		f_displayMenuTable();
-		std::cin >> choice;
-		f_MenuTable(choice);
-	}
+	std::cout << "Nazwa pliku wyjsciowego: ";
+	std::string fileResult;
+	std::cin >> fileResult;
+	if (!f_ExtensionCheck(fileResult, ".txt"))
+		throw MyExceptions("Nie udalo sie odczytac rozszerzenia pliku");
+	std::ofstream resultFile(fileResult);
+	if (!resultFile.is_open())
+		throw MyExceptions("Nie udalo sie otworzyc pliku");
+	resultFile << "Nazwa metody sortowania" << "\t Dlugosc tablicy" << "\t Rodzaj tablicy" << "\Liczba porownan" << "\t Liczba przestawien";
+	f_MenuTable(resultFile);
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
