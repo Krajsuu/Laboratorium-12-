@@ -8,6 +8,7 @@ void f_displayMenuTable()
     std::cout << "[2] Tablica uzupelniona liczbami posortowanymi rosnaco." << std::endl;
     std::cout << "[3] Tablica uzupelniona liczbami posortowanymi malejaco." << std::endl;
     std::cout << "[4] Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)." << std::endl;
+    std::cout << "[5] Zmien ilosc liczb do losowania" << std::endl;
     std::cout << "[0] Wyjdz z programu" << std::endl;
 }
 
@@ -22,10 +23,8 @@ void f_displayMenuSort()
     std::cout << "[0] Wyjdz z programu" << std::endl;
 }
 
-void f_MenuTable(std::ostream& resultFile)
+void f_MenuTable(std::ostream& resultFile, CSortTablica& S)
 {
-    CSortTablica S;
-    S.f_SetSize();
     int min, max;
     std::string type;
     int choice = -1;
@@ -35,46 +34,61 @@ void f_MenuTable(std::ostream& resultFile)
     {
     case 1:
     {
+        system("cls");
         std::cout << "Wybrales opcje : Tablica uzupelniona losowymi liczbami." << std::endl;
         type = "Tablica uzupelniona losowymi liczbami";
-        std::cin >> min;
-        std::cin >> max;
+        std::cout << "Podaj przedzial liczb do losowania ";
+        std::cin >> min >> max;
         S.FillRandom(min, max);
         f_MenuSort(S, type, resultFile);
         break;
     }
     case 2:
     {
+        system("cls");
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi rosnaco." << std::endl;
         type = "Tablica uzupelniona liczbami posortowanymi rosnaco";
-        S.FillAlone();
+        S.FillSorted(1);
         f_MenuSort(S, type, resultFile);
         break;
     }
     case 3:
     {
+        system("cls");
         std::cout << "Wybrales opcje : Tablica uzupelniona liczbami posortowanymi malejaco." << std::endl;
         type = "Tablica uzupelniona liczbami posortowanymi malejaco";
-        S.FillAlone();
+        S.FillSorted(0);
         f_MenuSort(S, type, resultFile);
         break;
     }
     case 4:
     {
+        system("cls");
         std::cout << "Wybrales opcje : Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)." << std::endl;
         type = "Tablica czesciowo uporzadkowana (10 % elementow jest na zlej pozycji)";
         S.FillPartiallySorted();
         f_MenuSort(S, type, resultFile);
         break;
     }
+    case 5:
+    {
+        system("cls");
+        S.f_SetSize();
+        f_MenuTable(resultFile, S);
+        break;
+    }
     case 0:
     {
+        system("cls");
         std::cout << "Wybrales opcje : Wyjdz z programu" << std::endl;
         exit(0);
     }
     default:
+    {
+        system("cls");
         std::cout << "Podany numer nie ma odzwierciedlenia w menu. Prosze wybierz numer w przedziale 1-5." << std::endl;
         break;
+    }
     }
 };
 
@@ -95,7 +109,9 @@ void f_MenuSort(CSortTablica S, std::string type, std::ostream& resultFile)
         {
             system("cls");
             std::cout << "Wybrales opcje : Sortowanie Bubelkowe." << std::endl;
+            S.Print();
             T.f_ShakerSort();
+            S.Print();
             resultFile << std::setw(30) << std::left << "Sortowanie B¹belkowe"
                 << std::setw(20) << std::left << S.f_ReturnSize()
                 << std::setw(75) << std::left << type
@@ -153,7 +169,7 @@ void f_MenuSort(CSortTablica S, std::string type, std::ostream& resultFile)
         {
             system("cls");
             std::cout << "Wybrales opcje :  Wroc do menu." << std::endl;
-            f_MenuTable(resultFile);
+            f_MenuTable(resultFile, S);
             break;
         }
         case 0:

@@ -25,19 +25,21 @@ int main()
 			<< std::setw(30) << std::left << "Liczba porównań"
 			<< std::setw(30) << std::left << "Liczba przestawień"
 			<< std::endl;
-
-		f_MenuTable(resultFile);
+		CSortTablica S;
+		S.f_SetSize();
+		f_MenuTable(resultFile, S);
 	}
-	catch(MyExceptions& e)
-	{
+	catch (MyExceptions& e) {
 		std::cerr << e.what();
+		return -1;
 	}
-	catch(std::exception& e)
-	{
+	catch (std::exception& e) {
 		std::cerr << e.what();
+		return -2;
 	}
-	catch (...)
-	{
-		std::cout << "Niezidentyfikowany wyjatek";
+	catch (...) {
+		std::cerr << "Niezidentyfikowany wyjatek!";
+		return -404;
 	}
 }
+

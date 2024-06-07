@@ -7,10 +7,10 @@
 class CSortTablica
 {
 private:
-	int *tab;
+	int* tab;
 	int n;
 	void f_shuffe();
-public :
+public:
 	void f_SetSize();
 	int* f_getTab();
 
@@ -27,6 +27,9 @@ public :
 	 * @param max - maksymalna wartoœæ
 	 */
 	void FillRandom(int min, int max);
+
+	void FillSorted(bool asc = 1);
+
 	void FillPartiallySorted();
 	/* @brief Funkcja FillAlone() wype³nia tablicê wartoœciami wprowadzonymi przez u¿ytkownika
 	 */

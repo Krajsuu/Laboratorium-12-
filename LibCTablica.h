@@ -8,11 +8,11 @@ class CTablica
 private:
 	int compareCounter;
 	int swapCounter;
-	
+
 	int* tab = nullptr;
 	int n = 0;
 
-	
+
 	int f_PartitionLomuto(int left, int right);
 
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
@@ -53,7 +53,7 @@ public:
 	int f_ReturnSwapCounter();
 	/* @brief Konstruktor klasy CTablica
 	 */
-	CTablica(CSortTablica &tab);
+	CTablica(CSortTablica& tab);
 	/* @brief Funkcja HeapSort() sortuje tablicê algorytmem sortowania przez kopcowanie
 	 * @param tab - tablica
 	 * @param n - rozmiar tablicy
