@@ -1,7 +1,15 @@
-﻿Labki\x64\Debug\LibCTablica.obj : warning LNK4042: obiekt określono więcej niż raz; dodatkowe wystąpienia zostały zignorowane
-Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: __cdecl CTablica::CTablica(class CSortTablica &)" (??0CTablica@@QEAA@AEAVCSortTablica@@@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
-Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_ShakerSort(void)" (?f_ShakerSort@CTablica@@QEAAXXZ) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
-Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_QuickSortLomuto(int,int)" (?f_QuickSortLomuto@CTablica@@QEAAXHH@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
-Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_HeapSort(void)" (?f_HeapSort@CTablica@@QEAAXXZ) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
-Menu.obj : error LNK2019: nierozpoznany symbol zewnętrzny "public: void __cdecl CTablica::f_QuickSortHoare(int,int)" (?f_QuickSortHoare@CTablica@@QEAAXHH@Z) przywołany w funkcji "void __cdecl f_MenuSort(class CSortTablica)" (?f_MenuSort@@YAXVCSortTablica@@@Z)
-C:\Users\monik\Desktop\lab2\x64\Debug\Labki.exe : fatal error LNK1120: liczba nierozpoznanych elementów zewnętrznych: 5
+﻿  Labki.cpp
+  LibCSortTablica.cpp
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  LibCTablica.h
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(3,20): error C2039: „f_shuffe”: nie jest składową elementu „CSortTablica”
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,15): error C2065: "tab": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,20): error C2065: "tab": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,26): error C2065: "n": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(86,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(87,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  Menu.cpp
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  Generowanie kodu...

@@ -3,16 +3,25 @@
 
 #include "LibCSortTablica.h"
 
+/* @brief CTablica - klasa zawieraj¹ca algorytmy sortowania
+ */
 class CTablica
 {
 private:
+	// Liczniki porównañ i zamian
 	int compareCounter;
 	int swapCounter;
 
+	// Inicjalizacja tablicy dynamicznej i jej rozmiaru
 	int* tab = nullptr;
 	int n = 0;
 
-
+	/* @brief Funkcja PartitionLomuto() dokonuje podzia³u tablicy na dwie czêœci
+	 * @param tab - tablica
+	 * @param left - indeks lewego krañca
+	 * @param right - indeks prawego krañca
+	 * @return Indeks elementu, który jest na swoim miejscu
+	 */
 	int f_PartitionLomuto(int left, int right);
 
 	/* @brief Funkcja Heapify() przywraca w³asnoœæ kopca dla wêz³a i
@@ -59,10 +68,18 @@ public:
 	 * @param n - rozmiar tablicy
 	 */
 
+	/* @brief Funkcja BubbleSort() sortuje tablicê algorytmem sortowania b¹belkowego
+	 */
 	void f_ShakerSort();
 
+	/* @brief Funkcja InsertionSort() sortuje tablicê algorytmem sortowania przez wstawianie
+	* @param left - indeks lewego krañca
+	* @param right - indeks prawego krañca
+	 */
 	void f_QuickSortLomuto(int left, int right);
 
+	/* @brief funkcja HeapSort() sortuje tablicê algorytmem sortowania przez kopcowanie
+	*/
 	void f_HeapSort();
 	/* @brief Funkcja QuickSortHoare sortuje tablicê algorytmem sortowania szybkiego
 	 * @param tab - tablica
@@ -70,7 +87,6 @@ public:
 	 * @param right - indeks prawego krañca
 	*/
 	void f_QuickSortHoare(int left, int right);
-
 };
 
 #endif // !LIBCTABLICA_H

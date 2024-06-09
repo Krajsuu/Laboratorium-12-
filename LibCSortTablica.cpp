@@ -1,12 +1,6 @@
 #include "LibCSortTablica.h"
 #include "LibExceptions.h"
-void CSortTablica::f_shuffe()
-{
-	std::random_device rd;
-	std::mt19937 g(rd());
-	std::shuffle(tab, tab + n, g);
 
-}
 
 void CSortTablica::f_SetSize()
 {
