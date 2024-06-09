@@ -1,0 +1,8 @@
+﻿  Lab12.cpp
+  LibCSortTablica.cpp
+C:\Users\monik\Desktop\lab2\Lab12.cpp(11,2): error C2660: "f_MenuTable": funkcja nie przyjmuje 0 argumentów
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(86,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(87,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+  LibCTablica.cpp
+  Menu.cpp
+  Generowanie kodu...

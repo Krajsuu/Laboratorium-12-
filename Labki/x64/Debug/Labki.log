@@ -1,0 +1,15 @@
+﻿  Labki.cpp
+  LibCSortTablica.cpp
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  LibCTablica.h
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(3,20): error C2039: „f_shuffe”: nie jest składową elementu „CSortTablica”
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,15): error C2065: "tab": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,20): error C2065: "tab": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(7,26): error C2065: "n": niezadeklarowany identyfikator
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(86,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\Desktop\lab2\LibCSortTablica.cpp(87,8): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  Menu.cpp
+C:\Users\monik\Desktop\lab2\LibCSortTablica.h(56,2): error C2018: nieznany znak "0x40"
+  Generowanie kodu...

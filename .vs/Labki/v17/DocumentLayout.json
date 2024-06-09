@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|C:\\Users\\monik\\Desktop\\lab2\\LibCSortTablica.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|solutionrelative:LibCSortTablica.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|C:\\Users\\monik\\Desktop\\lab2\\LibCSortTablica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|solutionrelative:LibCSortTablica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|solutionrelative:LibCTablica.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D512B4DC-D2F2-48B8-9578-636EEC79EFF9}|Labki.vcxproj|solutionrelative:LibCTablica.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,48 +24,9 @@
               "RelativeDocumentMoniker": "LibCSortTablica.cpp",
               "ToolTip": "C:\\Users\\monik\\Desktop\\lab2\\LibCSortTablica.cpp",
               "RelativeToolTip": "LibCSortTablica.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-04T09:42:28.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LibCSortTablica.h",
-              "DocumentMoniker": "C:\\Users\\monik\\Desktop\\lab2\\LibCSortTablica.h",
-              "RelativeDocumentMoniker": "LibCSortTablica.h",
-              "ToolTip": "C:\\Users\\monik\\Desktop\\lab2\\LibCSortTablica.h",
-              "RelativeToolTip": "LibCSortTablica.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-04T08:37:30.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LibCTablica.cpp",
-              "DocumentMoniker": "C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.cpp",
-              "RelativeDocumentMoniker": "LibCTablica.cpp",
-              "ToolTip": "C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.cpp",
-              "RelativeToolTip": "LibCTablica.cpp",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAAGUAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-03T18:59:10.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LibCTablica.h",
-              "DocumentMoniker": "C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.h",
-              "RelativeDocumentMoniker": "LibCTablica.h",
-              "ToolTip": "C:\\Users\\monik\\Desktop\\lab2\\LibCTablica.h",
-              "RelativeToolTip": "LibCTablica.h",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-03T18:56:13.279Z",
+              "WhenOpened": "2024-06-09T14:19:06.704Z",
               "EditorCaption": ""
             }
           ]
